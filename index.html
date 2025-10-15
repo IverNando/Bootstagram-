@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descripción de la página">
+    <meta name="author" content="Tu Nombre">
+    <title>Bootstagram</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar bg-body-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <span class="fa-brands fa-instagram fa-xl" style="color: #FFD43B;"></span>
+                    Bootstagram
+                </a>
+
+                <!--Cree un div para empujar estos botones a la derecha del nav-->
+                <div class="d-flex justify-content-end gap-4 mx-3">
+                    <!-- Boton gatillo de la modal -->
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Create a new post
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Create a new post</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <label for="exampleFormControlTextarea1" class="form-label">Caption:</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                            placeholder="add the caption for your post"></textarea>
+                                </div>
+                                </form>
+                                <!----botones de la modal---->
+                                <div class="d-grid gap-2 d-md-block ms-3 mt-0 mb-3">
+                                    <button class="btn btn-warning" type="button"><span class="fa-solid fa-camera"
+                                            style="color: #000000;"></span></button>
+                                    <button class="btn btn-warning" type="button"><span class="fa-solid fa-location-dot"
+                                            style="color: #000000;"></span></button>
+                                </div>
+                                <!-- Fin botones de la modal -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-warning">Publish</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fin Modal -->
+
+
+                    <!--  el Dropdown -->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown"
+                            data-bs-display="static" aria-expanded="false">
+
+                            <!-----Aqui va el icono del dropdown----->
+                            <span class="fa-solid fa-gear"></span>
+                            <!---Fin icono del dropdown--->
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Accesibility</a></li>
+                            <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="#">Log Out</a></li>
+                        </ul>
+                    </div>
+                    <!-- Fin Dropdown  -->
+
+                </div>
+        </nav>
+    </div>
+    <!--DEBAJO DE ESTO DEBO AGREGAR LO DEMAS-->
+
+    <!---aqui va el nav de las imagenes-->
+    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"><span
+                    class="fa-solid fa-table-cells fa-2xl" style="color: #000000;"></span></button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><span
+                    class="fa-regular fa-square fa-2xl" style="color: #000000;"></span></button>
+        </li>
+    </ul>
+    <!--Aqui va el contenido de la navtab-->
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+            tabindex="0">
+            <!---fotos en tabla-->
+            <div class="container-fluid">
+                <!---primer row-->
+                <div class="row pt-3 justify-content-center">
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                        <img src="https://picsum.photos/id/238/650" class="img-fluid" alt="Imagen 1">
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                        <img src="https://picsum.photos/id/403/650" class="img-fluid" alt="Imagen 2">
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                        <img src="https://picsum.photos/id/666/650" class="img-fluid" alt="Imagen 3">
+                    </div>
+                </div>
+            </div>
+            <!---fin primer row-->
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                        <img src="https://picsum.photos/id/269/650" class="img-fluid" alt="Imagen 4">
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                        <img src="https://picsum.photos/id/100/650" class="img-fluid" alt="Imagen 5">
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                        <img src="https://picsum.photos/id/800/650" class="img-fluid" alt="Imagen 6">
+                    </div>
+
+                </div>
+            </div>
+            <!----fin segundo row-->
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                        <img src="https://picsum.photos/id/253/650" class="img-fluid" alt="Imagen 7">
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                        <img src="https://picsum.photos/id/756/650" class="img-fluid" alt="Imagen 8">
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                        <img src="https://picsum.photos/id/975/650" class="img-fluid" alt="Imagen 9">
+                    </div>
+
+                </div>
+            </div>
+            <!----fin tercer row-->
+        </div>
+
+
+                                                <!----AQUI ABAJO EL ROW CON UNA IMAGEN DE 12 COLUMNAS-->
+        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+
+            <!----copiar y pegar esto 9 veces LOL-->
+            <div class="container-fluid"> <!--desde aqui-->
+                <div class="row col-12 justify-content-center mt-3">
+                    <div class="card rounded-0" style="width: 50rem;">
+                        <div class="card-body d-flex justify-content-between">
+                            <h5 class="card-title">Los Niu Llores</h5>
+                            <div>
+                                <h4>07/70</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-12 justify-content-center">
+                    <div class="card p-0 rounded-0" style="width: 50rem;">
+                        <img src="https://picsum.photos/id/238/650" class="img-fluid" alt="citi">
+                        <div class="card-body">
+                            <h6 class="card-text">666 Likes</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod
+                                asd asd asd asd
+                                asd asd asd asd asd Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
+                                numquam, laborum, rem molestias blanditiis iure ad officiis nostrum deserunt reiciendis
+                                ea iste dolorem quasi qui perferendis. Incidunt distinctio commodi numquam!.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!---hasta aqui-->
+            <div class="container-fluid"> <!--desde aqui-->
+                <div class="row col-12 justify-content-center mt-3">
+                    <div class="card rounded-0" style="width: 50rem;">
+                        <div class="card-body d-flex justify-content-between">
+                            <h5 class="card-title">En esto mi abuelo escribia codigo</h5>
+                            <div>
+                                <h4>07/20</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-12 justify-content-center">
+                    <div class="card p-0 rounded-0" style="width: 50rem;">
+                        <img src="https://picsum.photos/id/403/650" class="img-fluid" alt="maquina de escribir">
+                        <div class="card-body">
+                            <h6 class="card-text">666 Likes</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod
+                                asd asd asd asd
+                                asd asd asd asd asd Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
+                                numquam, laborum, rem molestias blanditiis iure ad officiis nostrum deserunt reiciendis
+                                ea iste dolorem quasi qui perferendis. Incidunt distinctio commodi numquam!.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!---hasta aqui-->
+            <div class="container-fluid"> <!--desde aqui-->
+                <div class="row col-12 justify-content-center mt-3">
+                    <div class="card rounded-0" style="width: 50rem;">
+                        <div class="card-body d-flex justify-content-between">
+                            <h5 class="card-title">Viajecito uwu</h5>
+                            <div>
+                                <h4>07/25</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-12 justify-content-center">
+                    <div class="card p-0 rounded-0" style="width: 50rem;">
+                        <img src="https://picsum.photos/id/666/650" class="img-fluid" alt="bosque">
+                        <div class="card-body">
+                            <h6 class="card-text">666 Likes</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod
+                                asd asd asd asd
+                                asd asd asd asd asd Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
+                                numquam, laborum, rem molestias blanditiis iure ad officiis nostrum deserunt reiciendis
+                                ea iste dolorem quasi qui perferendis. Incidunt distinctio commodi numquam!.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!---hasta aqui-->
+            <div class="container-fluid"> <!--desde aqui-->
+                <div class="row col-12 justify-content-center mt-3">
+                    <div class="card rounded-0" style="width: 50rem;">
+                        <div class="card-body d-flex justify-content-between">
+                            <h5 class="card-title">Equilibrio</h5>
+                            <div>
+                                <h4>07/22</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-12 justify-content-center">
+                    <div class="card p-0 rounded-0" style="width: 50rem;">
+                        <img src="https://picsum.photos/id/269/650" class="img-fluid" alt="pajarosymar">
+                        <div class="card-body">
+                            <h6 class="card-text">666 Likes</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod
+                                asd asd asd asd
+                                asd asd asd asd asd Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
+                                numquam, laborum, rem molestias blanditiis iure ad officiis nostrum deserunt reiciendis
+                                ea iste dolorem quasi qui perferendis. Incidunt distinctio commodi numquam!.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!---hasta aqui-->
+            <div class="container-fluid"> <!--desde aqui-->
+                <div class="row col-12 justify-content-center mt-3">
+                    <div class="card rounded-0" style="width: 50rem;">
+                        <div class="card-body d-flex justify-content-between">
+                            <h5 class="card-title">Extraño la playa!</h5>
+                            <div>
+                                <h4>07/35</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-12 justify-content-center">
+                    <div class="card p-0 rounded-0" style="width: 50rem;">
+                        <img src="https://picsum.photos/id/100/650" class="img-fluid" alt="playa">
+                        <div class="card-body">
+                            <h6 class="card-text">666 Likes</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod
+                                asd asd asd asd
+                                asd asd asd asd asd Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
+                                numquam, laborum, rem molestias blanditiis iure ad officiis nostrum deserunt reiciendis
+                                ea iste dolorem quasi qui perferendis. Incidunt distinctio commodi numquam!.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!---hasta aqui-->
+            <div class="container-fluid"> <!--desde aqui-->
+                <div class="row col-12 justify-content-center mt-3">
+                    <div class="card rounded-0" style="width: 50rem;">
+                        <div class="card-body d-flex justify-content-between">
+                            <h5 class="card-title">Disociao</h5>
+                            <div>
+                                <h4>07/hoy</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-12 justify-content-center">
+                    <div class="card p-0 rounded-0" style="width: 50rem;">
+                        <img src="https://picsum.photos/id/800/650" class="img-fluid" alt="estoy disociao compañero ayuda">
+                        <div class="card-body">
+                            <h6 class="card-text">666 Likes</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod
+                                asd asd asd asd
+                                asd asd asd asd asd Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
+                                numquam, laborum, rem molestias blanditiis iure ad officiis nostrum deserunt reiciendis
+                                ea iste dolorem quasi qui perferendis. Incidunt distinctio commodi numquam!.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!---hasta aqui-->
+            <div class="container-fluid"> <!--desde aqui-->
+                <div class="row col-12 justify-content-center mt-3">
+                    <div class="card rounded-0" style="width: 50rem;">
+                        <div class="card-body d-flex justify-content-between">
+                            <h5 class="card-title">Esto no se que significa, pero creo que es lindo</h5>
+                            <div>
+                                <h4>07/12</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-12 justify-content-center">
+                    <div class="card p-0 rounded-0" style="width: 50rem;">
+                        <img src="https://picsum.photos/id/253/650" class="img-fluid" alt="piedraypasto">
+                        <div class="card-body">
+                            <h6 class="card-text">666 Likes</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod
+                                asd asd asd asd
+                                asd asd asd asd asd Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
+                                numquam, laborum, rem molestias blanditiis iure ad officiis nostrum deserunt reiciendis
+                                ea iste dolorem quasi qui perferendis. Incidunt distinctio commodi numquam!.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!---hasta aqui-->
+            <div class="container-fluid"> <!--desde aqui-->
+                <div class="row col-12 justify-content-center mt-3">
+                    <div class="card rounded-0" style="width: 50rem;">
+                        <div class="card-body d-flex justify-content-between">
+                            <h5 class="card-title">Otra playa, me gustan mucho las playas</h5>
+                            <div>
+                                <h4>07/34</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-12 justify-content-center">
+                    <div class="card p-0 rounded-0" style="width: 50rem;">
+                        <img src="https://picsum.photos/id/756/650" class="img-fluid" alt="citi">
+                        <div class="card-body">
+                            <h6 class="card-text">666 Likes</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod
+                                asd asd asd asd
+                                asd asd asd asd asd Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
+                                numquam, laborum, rem molestias blanditiis iure ad officiis nostrum deserunt reiciendis
+                                ea iste dolorem quasi qui perferendis. Incidunt distinctio commodi numquam!.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!---hasta aqui-->
+            <div class="container-fluid"> <!--desde aqui-->
+                <div class="row col-12 justify-content-center mt-3">
+                    <div class="card rounded-0" style="width: 50rem;">
+                        <div class="card-body d-flex justify-content-between">
+                            <h5 class="card-title">una casa abandonada, creppy</h5>
+                            <div>
+                                <h4>07/56</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-12 justify-content-center">
+                    <div class="card p-0 rounded-0" style="width: 50rem;">
+                        <img src="https://picsum.photos/id/975/650" class="img-fluid" alt="que miedo">
+                        <div class="card-body">
+                            <h6 class="card-text">666 Likes</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod
+                                asd asd asd asd
+                                asd asd asd asd asd Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
+                                numquam, laborum, rem molestias blanditiis iure ad officiis nostrum deserunt reiciendis
+                                ea iste dolorem quasi qui perferendis. Incidunt distinctio commodi numquam!.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!---hasta aqui-->
+
+
+        </div> <!---fin del div nav-->
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
